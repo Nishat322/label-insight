@@ -38,7 +38,6 @@ class App extends Component {
                             description = {image.description}
                         />,
                     )}
-                
                 </div>
             </div>
         )
