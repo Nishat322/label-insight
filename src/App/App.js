@@ -6,7 +6,6 @@ import './App.css'
 class App extends Component {
     state = {
         images: [],
-        description: ''
     }
 
     componentDidMount() {
@@ -22,12 +21,7 @@ class App extends Component {
             })
     }
 
-    
-
-    
-
     render() { 
-        console.log(this.state.images)
         const {images} = this.state
         const size = 25
         return (  
@@ -37,9 +31,11 @@ class App extends Component {
                     {images.slice(0, size).map(image => 
                         <Thumbnail 
                             key = {image.id}
+                            id = {image.id}
                             thumbnail = {image.thumbnailUrl}
                             url = {image.url}
                             title = {image.title}
+                            description = {image.description}
                         />,
                     )}
                 

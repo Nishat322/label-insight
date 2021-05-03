@@ -15,13 +15,19 @@ class Thumbnail extends Component {
         this.setState({description: e.target.value})
     }
 
-    setData = e => {
-        localStorage.setItem('description', this.state.description)
+    setData = () => {
+        let obj = {id: this.props.id, description: this.state.description}
+        localStorage.setItem('description', JSON.stringify(obj))
     }
 
     getData = () => {
-        let data = localStorage.getItem('description') 
-        return data
+        let data = localStorage.getItem('description')
+        data = JSON.parse(data)
+        if(data.id === this.props.id) {
+            return data.description
+        }
+
+        return 'No Description'
     }
 
     render() { 
