@@ -1,0 +1,14 @@
+.Thumbnail a{
+    margin: 2px;
+    border: 4px solid transparent;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.Thumbnail a:hover {
+    border-color:white;
+}
+
+.Thumbnail img {
+    border-radius: 6px;
+}
