@@ -4,7 +4,7 @@ import './App.css'
 
 class App extends Component {
     state = {
-        images: []
+        images: [],
     }
 
     componentDidMount() {
@@ -21,18 +21,22 @@ class App extends Component {
     }
 
     render() { 
-        console.log(this.state.images)
         const {images} = this.state
         const size = 25
         return (  
             <div className = 'App'>
+                <h1>Album Gallery</h1>
+                <div className = 'App-images'>
                     {images.slice(0, size).map(image => 
                         <Thumbnail 
                             key = {image.id}
                             thumbnail = {image.thumbnailUrl}
                             url = {image.url}
-                        />
+                            title = {image.title}
+                        />,
                     )}
+                
+                </div>
             </div>
         )
     }
