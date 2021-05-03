@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import Header from '../Header/Header'
 import Thumbnail from '../Thumbnail/Thumbnail'
 import './App.css'
 
 class App extends Component {
     state = {
         images: [],
+        description: ''
     }
 
     componentDidMount() {
@@ -20,12 +22,17 @@ class App extends Component {
             })
     }
 
+    
+
+    
+
     render() { 
+        console.log(this.state.images)
         const {images} = this.state
         const size = 25
         return (  
             <div className = 'App'>
-                <h1>Album Gallery</h1>
+                <Header/>
                 <div className = 'App-images'>
                     {images.slice(0, size).map(image => 
                         <Thumbnail 
